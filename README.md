@@ -22,4 +22,4 @@ I will use the annual sum of total_amount for each customer_id as the Monetary V
 ## Synthesis
 Recency, Frequency, Monetary Value 모두 클수록 좋지만, Total amount는 두 가지 지수와 다르게 매우 큰 단위를 가지므로, 단순 가중합을 하면 Recency, Frequency 항의 영향력이 매우 낮아질 수 있다. 각 지수 안에서 min-max scaling을 통해 단위를 맞춰주고, 각 지수의 가중합을 w_r*Recency + w_f*Frequency + w_mv*Monetary_value 로 하여 RFM 지수를 산출한다.
 While higher values of Recency, Frequency, and Monetary Value are all desirable, the total amount column (Monetary Value) has a much larger scale compared to the other two metrics. Therefore, if we simply take a weighted sum, the influence of the Recency and Frequency terms could be significantly diminished. To address this, we apply min–max scaling within each metric to align their units, and then calculate the RFM score as a weighted sum:
-RFM score = w_r × Recency + w_f × Frequency + w_mv × Monetary_Value. <img width="816" height="1424" alt="image" src="https://github.com/user-attachments/assets/0f12f4f7-8774-46d7-90c2-5042cb9c362a" />
+RFM score = w_r × Recency + w_f × Frequency + w_mv × Monetary_Value.
